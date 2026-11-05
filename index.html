@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Task Manager</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Student Task Manager</h1>
+  <div class="player">
+    <strong id="player-level"></strong>
+    <progress id="xp-progress" max="100" value="0"></progress>
+    <span id="xp-text"></span>
+  </div>
+</header>
+
+<div id="alert-banner" role="alert" hidden></div>
+
+<main class="layout">
+  <section class="panel">
+    <form id="task-form">
+      <input id="task-title" placeholder="New task" required>
+      <input id="task-deadline" type="datetime-local" required>
+      <select id="task-priority">
+        <option value="high">Important</option>
+        <option value="medium" selected>Moderate</option>
+        <option value="low">Slight</option>
+      </select>
+      <button class="primary">Add task</button>
+    </form>
+    <p class="hint">Press N for a new task, / to search.</p>
+
+    <div class="filters">
+      <input id="search-input" type="search" placeholder="Search tasks">
+      <select id="priority-filter">
+        <option value="all">All priorities</option>
+        <option value="high">Important</option>
+        <option value="medium">Moderate</option>
+        <option value="low">Slight</option>
+      </select>
+      <select id="status-filter">
+        <option value="all">All statuses</option>
+        <option value="pending">Pending</option>
+        <option value="done">Completed</option>
+      </select>
+    </div>
+
+    <ul id="task-list"></ul>
+  </section>
+
+  <aside class="sidebar">
+    <section class="panel pomodoro">
+      <h2>Pomodoro timer</h2>
+      <div id="pomodoro-display">25:00</div>
+      <div id="pomodoro-mode">Focus</div>
+      <div class="pomodoro-buttons">
+        <button id="pomodoro-toggle" class="primary">Start</button>
+        <button id="pomodoro-reset">Reset</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="calendar-header">
+        <button id="calendar-prev" aria-label="Previous month">‹</button>
+        <h2 id="calendar-title"></h2>
+        <button id="calendar-next" aria-label="Next month">›</button>
+      </div>
+      <div class="weekdays"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+      <div id="calendar-grid"></div>
+      <p class="hint">Select a day to see only its deadlines.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Achievements</h2>
+      <ul id="achievement-list"></ul>
+    </section>
+  </aside>
+</main>
+
+<div id="toast-area" aria-live="polite"></div>
+
+<!-- Order matters: each file uses the ones above it -->
+<script src="js/config.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/state.js"></script>
+<script src="js/gamification.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/render.js"></script>
+<script src="js/pomodoro.js"></script>
+<script src="js/events.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

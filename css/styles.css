@@ -1,0 +1,70 @@
+:root {
+  --ink: #1f2a44; --muted: #667089; --paper: #f3f5f9; --panel: #fff; --line: #d8deea;
+  --xp: #7ad3c1; --high: #e5484d; --medium: #f0b429; --low: #2fa866;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; }
+h2 { margin: 0 0 .75rem; font-size: 1.05rem; }
+input, select, button { font: inherit; padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--xp); outline-offset: 1px; }
+.primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* Layout */
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.5rem; background: var(--ink); color: #fff; }
+.topbar h1 { margin: 0; font-size: 1.25rem; }
+.player { display: flex; align-items: center; gap: .75rem; }
+progress { width: 140px; height: 10px; accent-color: var(--xp); }
+.layout { display: grid; grid-template-columns: 1fr 340px; gap: 1rem; align-items: start; max-width: 1100px; margin: 1.5rem auto; padding: 0 1rem; }
+.sidebar { display: grid; gap: 1rem; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; }
+.hint { margin: .5rem 0 0; color: var(--muted); font-size: .85rem; }
+
+/* Alert banner and toasts */
+#alert-banner { padding: .75rem 1.5rem; background: #ffe9e9; border-left: 6px solid var(--high); font-weight: 600; }
+#toast-area { position: fixed; right: 1rem; bottom: 1rem; display: grid; gap: .5rem; }
+.toast { padding: .6rem .9rem; border-radius: 8px; background: var(--ink); color: #fff; }
+
+/* Task form, filters and list */
+#task-form { display: grid; grid-template-columns: 1fr auto auto auto; gap: .5rem; }
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 .25rem; }
+#search-input { flex: 1; min-width: 160px; }
+#task-list { list-style: none; margin: 0; padding: 0; }
+.priority-high { --priority-color: var(--high); }
+.priority-medium { --priority-color: var(--medium); }
+.priority-low { --priority-color: var(--low); }
+.task { position: relative; display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: .75rem; margin-top: .5rem; padding: .75rem .75rem .9rem 1rem; border: 1px solid var(--line); border-left: 6px solid var(--priority-color); border-radius: 8px; overflow: hidden; }
+.task::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: var(--elapsed, 0%); background: var(--priority-color); }
+.task small { display: block; color: var(--muted); }
+.task.completed { opacity: .55; }
+.task.completed strong { text-decoration: line-through; }
+.countdown { font-weight: 600; font-variant-numeric: tabular-nums; }
+.countdown.urgent { color: var(--high); }
+.empty { padding: 1rem 0; color: var(--muted); }
+
+/* Pomodoro */
+.pomodoro { text-align: center; }
+#pomodoro-display { font-size: 3rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+#pomodoro-mode { color: var(--muted); }
+.pomodoro-buttons { display: flex; justify-content: center; gap: .5rem; margin-top: .75rem; }
+
+/* Calendar */
+.calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .5rem; }
+.calendar-header h2 { margin: 0; }
+.weekdays, #calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
+.weekdays { color: var(--muted); font-size: .8rem; }
+.day { display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 1; padding: 0; border: 0; border-radius: 8px; background: none; font-size: .85rem; }
+.day.today { outline: 1px solid var(--ink); font-weight: 700; }
+.day.selected { background: var(--ink); color: #fff; }
+.dots { display: flex; gap: 2px; height: 6px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--priority-color); }
+
+/* Achievements */
+#achievement-list { margin: 0; padding: 0; list-style: none; }
+#achievement-list li { padding: .25rem 0; color: var(--muted); opacity: .6; }
+#achievement-list li.unlocked { color: var(--ink); opacity: 1; font-weight: 600; }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  #task-form { grid-template-columns: 1fr; }
+}
