@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NTP — No To Procrastination</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="db-header">
+  <div class="db-header-inner">
+    <div class="db-brand">
+      <span class="db-logo">NTP</span>
+      <span class="db-tagline">No To Procrastination</span>
+    </div>
+    <a href="./" class="db-cta-btn">Open App →</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Hero ── -->
+  <section class="db-hero db-section-wrap" style="margin-top:3rem">
+    <div class="db-hero-text">
+      <span class="db-hero-eyebrow">Student Productivity</span>
+      <h1 class="db-hero-title">
+        Stop putting it off.<br>
+        <span class="db-hero-accent">Get it done.</span>
+      </h1>
+      <p class="db-hero-sub">NTP keeps your tasks, timer, and progress in one place — so you actually know what needs doing and when.</p>
+      <a href="./" class="db-hero-btn">Open the app →</a>
+    </div>
+    <div class="db-hero-visual" aria-hidden="true">
+      <div class="db-ring">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="54" stroke="#e2d9cc" stroke-width="9"/>
+          <circle cx="60" cy="60" r="54" stroke="#7c5c38" stroke-width="9"
+            stroke-dasharray="339.3" stroke-dashoffset="84.8"
+            stroke-linecap="round" transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="db-ring-inner">
+          <span class="db-ring-num" id="hero-pct">—</span>
+          <span class="db-ring-label">tasks done</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ── -->
+  <section class="db-section-wrap">
+    <h2 class="db-section-title">Your stats</h2>
+    <div class="db-stats-grid">
+
+      <div class="db-stat-card">
+        <div class="db-stat-icon db-stat-icon--green">✅</div>
+        <div>
+          <div class="db-stat-num" id="stat-completed">—</div>
+          <div class="db-stat-label">Completed</div>
+        </div>
+      </div>
+
+      <div class="db-stat-card">
+        <div class="db-stat-icon db-stat-icon--yellow">⏳</div>
+        <div>
+          <div class="db-stat-num" id="stat-pending">—</div>
+          <div class="db-stat-label">Pending</div>
+        </div>
+      </div>
+
+      <div class="db-stat-card">
+        <div class="db-stat-icon db-stat-icon--red">🚨</div>
+        <div>
+          <div class="db-stat-num" id="stat-overdue">—</div>
+          <div class="db-stat-label">Overdue</div>
+        </div>
+      </div>
+
+      <div class="db-stat-card">
+        <div class="db-stat-icon db-stat-icon--blue">⭐</div>
+        <div>
+          <div class="db-stat-num" id="stat-xp">—</div>
+          <div class="db-stat-label">Total XP</div>
+        </div>
+      </div>
+
+      <div class="db-stat-card">
+        <div class="db-stat-icon db-stat-icon--navy">🏅</div>
+        <div>
+          <div class="db-stat-num" id="stat-level">—</div>
+          <div class="db-stat-label">Your level</div>
+        </div>
+      </div>
+
+      <div class="db-stat-card">
+        <div class="db-stat-icon db-stat-icon--blue">🏆</div>
+        <div>
+          <div class="db-stat-num" id="stat-achievements">—</div>
+          <div class="db-stat-label">Achievements</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Features ── -->
+  <section class="db-section-wrap">
+    <h2 class="db-section-title">What's inside</h2>
+    <div class="db-features-grid">
+
+      <div class="db-feature-card">
+        <span class="db-feature-icon">📝</span>
+        <h3>Task Manager</h3>
+        <p>Add tasks with titles, deadlines, and priority levels. A live progress bar shows how close each deadline is.</p>
+      </div>
+
+      <div class="db-feature-card">
+        <span class="db-feature-icon">🍅</span>
+        <h3>Pomodoro Timer</h3>
+        <p>25-minute focus sessions with 5-minute breaks. Pause, resume, or reset anytime — stay in flow, avoid burnout.</p>
+      </div>
+
+      <div class="db-feature-card">
+        <span class="db-feature-icon">⭐</span>
+        <h3>XP &amp; Levels</h3>
+        <p>Complete tasks on time to earn XP. Miss deadlines and lose points. Level up by staying consistent.</p>
+      </div>
+
+      <div class="db-feature-card">
+        <span class="db-feature-icon">🏆</span>
+        <h3>Achievements</h3>
+        <p>Unlock badges at milestones — first task, five tasks done, reaching level 3 and beyond.</p>
+      </div>
+
+      <div class="db-feature-card">
+        <span class="db-feature-icon">📅</span>
+        <h3>Calendar View</h3>
+        <p>See which days have tasks due, color-coded by priority. Click any date to filter the task list instantly.</p>
+      </div>
+
+      <div class="db-feature-card">
+        <span class="db-feature-icon">🔔</span>
+        <h3>Deadline Alerts</h3>
+        <p>Get warned when a task is due within 5 hours. Overdue tasks trigger an XP penalty automatically.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── How it works ── -->
+  <section class="db-section-wrap">
+    <h2 class="db-section-title">How it works</h2>
+    <ol class="db-steps">
+      <li class="db-step">
+        <span class="db-step-num">1</span>
+        <div>
+          <strong>Add a task</strong>
+          <p>Give it a title, pick a deadline date/time, and choose a priority level.</p>
+        </div>
+      </li>
+      <li class="db-step">
+        <span class="db-step-num">2</span>
+        <div>
+          <strong>Start a Pomodoro</strong>
+          <p>Hit Start on the timer. Work 25 minutes, then take a 5-minute break.</p>
+        </div>
+      </li>
+      <li class="db-step">
+        <span class="db-step-num">3</span>
+        <div>
+          <strong>Mark tasks done</strong>
+          <p>Complete tasks before the deadline to earn XP. Every point counts toward your next level.</p>
+        </div>
+      </li>
+      <li class="db-step">
+        <span class="db-step-num">4</span>
+        <div>
+          <strong>Level up</strong>
+          <p>100 XP per level. Unlock achievements along the way and watch your streak grow.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="db-footer">
+  <span>NTP — No To Procrastination</span>
+</footer>
+
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
