@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Achievements — NTP</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-brand">
+    <a href="dashboard.html" class="topbar-back" aria-label="Back to dashboard">
+      <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="dashboard.html" class="topbar-logo" aria-label="NTP Home">NTP</a>
+    <nav class="topbar-nav">
+      <a href="./">📝 Tasks</a>
+      <a href="search.html">🔍 Search</a>
+      <a href="calendar.html">📅 Calendar</a>
+      <a href="achievements.html" aria-current="page">🏆 Achievements</a>
+    </nav>
+  </div>
+  <div class="player">
+    <strong id="player-level"></strong>
+    <progress id="xp-progress" max="100" value="0"></progress>
+    <span id="xp-text"></span>
+  </div>
+</header>
+<div id="alert-banner" role="alert" hidden></div>
+
+<main class="page">
+
+  <section class="panel">
+    <h2>Achievements</h2>
+    <div class="achievement-summary">
+      <strong id="achievement-count"></strong>
+      <progress id="achievement-progress" max="1" value="0"></progress>
+    </div>
+    <div id="achievement-groups"></div>
+  </section>
+
+</main>
+
+<div id="toast-area" aria-live="polite"></div>
+
+<script type="module" src="js/achievements.js"></script>
+</body>
+</html>

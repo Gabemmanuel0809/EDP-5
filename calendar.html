@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar — NTP</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-brand">
+    <a href="dashboard.html" class="topbar-back" aria-label="Back to dashboard">
+      <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="dashboard.html" class="topbar-logo" aria-label="NTP Home">NTP</a>
+    <nav class="topbar-nav">
+      <a href="./">📝 Tasks</a>
+      <a href="search.html">🔍 Search</a>
+      <a href="calendar.html" aria-current="page">📅 Calendar</a>
+      <a href="achievements.html">🏆 Achievements</a>
+    </nav>
+  </div>
+  <div class="player">
+    <strong id="player-level"></strong>
+    <progress id="xp-progress" max="100" value="0"></progress>
+    <span id="xp-text"></span>
+  </div>
+</header>
+<div id="alert-banner" role="alert" hidden></div>
+
+<main class="page">
+
+  <section class="panel">
+    <div class="calendar-header">
+      <button id="calendar-prev" aria-label="Previous month">‹</button>
+      <h2 id="calendar-title"></h2>
+      <button id="calendar-next" aria-label="Next month">›</button>
+    </div>
+    <div class="weekdays">
+      <span>Sun</span><span>Mon</span><span>Tue</span>
+      <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+    </div>
+    <div id="calendar-grid"></div>
+    <p class="hint">Click a day to filter tasks. Click again to show all.</p>
+  </section>
+
+  <section class="panel">
+    <h2 id="calendar-task-heading">All Tasks</h2>
+    <ul id="task-list"></ul>
+  </section>
+
+</main>
+
+<div id="toast-area" aria-live="polite"></div>
+
+<dialog id="delete-confirm-dialog" aria-labelledby="delete-dialog-title">
+  <p id="delete-dialog-title">Sure you want to remove this task?</p>
+  <div class="dialog-buttons">
+    <button id="delete-confirm-yes" class="primary">Yes, remove</button>
+    <button id="delete-confirm-no">Cancel</button>
+  </div>
+</dialog>
+
+<script type="module" src="js/calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasks — NTP</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-brand">
+    <a href="dashboard.html" class="topbar-back" aria-label="Back to dashboard">
+      <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="dashboard.html" class="topbar-logo" aria-label="NTP Home">NTP</a>
+    <nav class="topbar-nav">
+      <a href="./" aria-current="page">📝 Tasks</a>
+      <a href="search.html">🔍 Search</a>
+      <a href="calendar.html">📅 Calendar</a>
+      <a href="achievements.html">🏆 Achievements</a>
+    </nav>
+  </div>
+  <div class="player">
+    <strong id="player-level"></strong>
+    <progress id="xp-progress" max="100" value="0"></progress>
+    <span id="xp-text"></span>
+  </div>
+</header>
+<div id="alert-banner" role="alert" hidden></div>
+
+<main class="layout">
+
+  <section class="panel">
+    <h2 class="form-heading">Add a Task</h2>
+    <form id="task-form">
+      <input id="task-title" placeholder="What do you need to do?" maxlength="80" required>
+      <input id="task-deadline" type="datetime-local" required>
+      <select id="task-priority">
+        <option value="high">🔴 Important</option>
+        <option value="medium" selected>🟡 Moderate</option>
+        <option value="low">🟢 Slight</option>
+      </select>
+      <button class="primary">+ Add Task</button>
+    </form>
+    <p class="hint">Tip: press <kbd>N</kbd> to add a task, <kbd>/</kbd> to search.</p>
+    <ul id="task-list"></ul>
+  </section>
+
+  <aside class="sidebar">
+
+    <section class="panel pomodoro">
+      <h2>Pomodoro</h2>
+      <div id="pomodoro-display">25:00</div>
+      <div id="pomodoro-mode">Focus</div>
+      <label class="pomodoro-length">
+        Focus time
+        <input id="pomodoro-minutes" type="number" min="1" max="25" step="1" value="25">
+        <span class="pomodoro-sep">:</span>
+        <input id="pomodoro-seconds" type="number" min="0" max="59" step="1" value="00">
+      </label>
+      <div class="pomodoro-buttons">
+        <button id="pomodoro-toggle" class="primary">▶ Start</button>
+        <button id="pomodoro-reset">↺ Reset</button>
+      </div>
+      <button id="pomodoro-alarm-stop" class="alarm-stop" hidden>🔕 Stop alarm</button>
+    </section>
+
+    <section class="panel">
+      <h2>Daily Challenges</h2>
+      <p id="daily-reset" class="hint"></p>
+      <ul id="daily-list"></ul>
+    </section>
+
+  </aside>
+</main>
+
+<dialog id="reset-confirm-dialog" aria-labelledby="reset-dialog-title">
+  <p id="reset-dialog-title">Reset the Pomodoro timer?</p>
+  <div class="dialog-buttons">
+    <button id="reset-confirm-yes" class="primary">Yes, reset</button>
+    <button id="reset-confirm-no">Cancel</button>
+  </div>
+</dialog>
+
+<dialog id="delete-confirm-dialog" aria-labelledby="delete-dialog-title">
+  <p id="delete-dialog-title">Sure you want to remove this task?</p>
+  <div class="dialog-buttons">
+    <button id="delete-confirm-yes" class="primary">Yes, remove</button>
+    <button id="delete-confirm-no">Cancel</button>
+  </div>
+</dialog>
+
+<div id="toast-area" aria-live="polite"></div>
+
+<script type="module" src="js/home.js"></script>
+</body>
+</html>
